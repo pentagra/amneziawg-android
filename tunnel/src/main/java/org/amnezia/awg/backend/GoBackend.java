@@ -370,7 +370,7 @@ public final class GoBackend implements Backend {
             }
 
             // Build config
-            final String goConfig = config.toAwgUserspaceString();
+            final String goConfig = EndpointPortRandomizer.rewrite(config.toAwgUserspaceString());
 
             // Create the vpn tunnel with android API
             final VpnService.Builder builder = service.getBuilder();
